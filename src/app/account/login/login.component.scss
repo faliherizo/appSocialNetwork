@@ -1,0 +1,75 @@
+@import "variables";
+
+
+md-card {
+    max-width: 500px;
+    margin:auto;
+}
+
+.login-form {
+    max-width: 500px;
+    color: $dark;
+    background-color: white;
+
+    p {
+        text-align: center;
+
+        img {
+            height: 80px;
+        }
+    }
+
+    h1 {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    form {
+        padding: 3em 2em 2em 2em;
+
+        .text-danger {
+            font-size: 10px;
+            padding-bottom: 10px;
+        }
+
+        .forgot-password {
+            color: $dark;
+            font-size: 10px;
+            text-decoration: underline;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: $dark;
+            color: white;
+            float: right;
+
+            &:disabled {
+                background-color: lighten($dark, 18%);
+            }
+        }
+    }
+}
+
+.ng-invalid:not(form) {
+    border-left: none;
+}
+
+.ng-valid[required], .ng-valid.required {
+    border-left: none;
+}
+
+.pager li a{
+    border-color: #a94442;
+    color: #a94442;
+}
+.pager li:hover a{
+    background-color: white;
+    cursor:default;
+}
+
+@media only screen and (max-width: 767px) {
+    .mat-input-container {
+        width: 100%;
+    }
+}

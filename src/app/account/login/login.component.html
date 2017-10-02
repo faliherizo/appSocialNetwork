@@ -1,0 +1,63 @@
+<div class="container">
+  <md-card>
+    <div class="login-form">
+      <div class="login-form-header">
+        <p>
+          <img alt="Logo GIF" src="../../../assets/images/adherantGif.png"/>
+        </p>
+      </div>
+
+      <div class="col-xs-12">
+        <h1>WSP Control Fournisseur</h1>
+      </div>
+
+      <div class="alert alert-danger" *ngIf=message>
+        <span class="glyphicon glyphicon-info-sign"></span> {{ message }}
+      </div>
+
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-horizontal" autocomplete="off">
+
+        <div class="row row-centered">
+
+          <div class="col-xs-12">
+            <md-input-container>
+              <input mdInput placeholder="Login" type="text" required [(ngModel)]="creditentials.login" name="login"
+                     #login="ngModel">
+            </md-input-container>
+            <div [hidden]="login.valid || login.pristine" class="text-danger">
+              <div class="col-xs-12 col-md-6 col-centered text-left">
+                <span class="small">Veuillez saisir un login</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <md-input-container>
+              <input mdInput placeholder="Mot de passe" type="password" required [(ngModel)]="creditentials.password"
+                     name="password" #password="ngModel">
+            </md-input-container>
+            <div [hidden]="password.valid || password.pristine" class="text-danger">
+              <div class="col-xs-12 col-md-6 col-centered text-left">
+                <em class="small">Veuillez entrer un mot de passe</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6 col-centered">
+            <a class="forgot-password" [routerLink]="['../forgotpassword']">Mot de passe oublié</a>
+          </div>
+
+          <div class="col-xs-12">
+            <button md-raised-button routerLink="." type="submit"
+                    [disabled]="!loginForm.form.valid">Se connecter</button>
+          </div>
+        </div>
+        <!--<nav>
+          <ul class="pager">
+            <li><a>1 tentative echouée</a></li>
+          </ul>
+        </nav>-->
+      </form>
+    </div>
+  </md-card>
+</div>
